@@ -31,9 +31,63 @@ class App extends Component{
       let vowelsArray = currentWord.split("").filter(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
+    
       console.log("vowelsArray:", vowelsArray)
 
       // your code here!
+      // define what a vowel is
+
+      // var i=0
+      // var j=0
+
+      // var firstVow = (currentWord) => {
+      //   let vowels = 'aeiouAEIOU'
+      //   for (i=0; i<currentWord.length; i++) {
+      //     for (j=0; j<vowels.length; j++) {
+      //       if(currentWord[i]===vowels[j]){
+      //         return currentWord.indexOf(currentWord[i]);
+      //       }
+      //     }
+      //   }
+      // };
+
+      // console.log(firstVow("index of first vowel;", currentWord))
+      let vowels = ["a", "e", "i", "o", "u", "y"] 
+
+      let vowelsIndex = 0
+
+      if (vowels.includes(currentWord[0])) {
+        return currentWord + "way"
+      } else if (!vowels.includes(currentWord[0])) {
+        return currentWord + "way"
+      }
+      // console.log(vowelsIndex("bobby"))
+
+      //const pigLatin = (userInput) => {
+
+     // }
+
+
+      // define the first [index] of the vowel
+      // define a function that takes input of a string
+
+      // conditionals 
+      
+      //input - else if first index string is "y" && second index is a vowel rtn str - "y" + move "y"  to end of str + "ay"
+      //ex: yummy = ummyyay / yvette = yvetteway
+
+      // first input - if 1st letter is vowel return str + "way"
+      // ex: ask = askway
+
+      // second input - else if starts with "qu" rtn str + move "qu" to end of str + "ay"
+      //ex: queen = eenquay
+
+      //third input - else if start with "sq" rtn str + "u" to end of str + "ay"
+      //ex: squeak = eaksquay
+
+      //fourth input - if index of first vowel !== 0 rtn all indexes before the vowel + "ay" to end of str
+      //ex: chair = airchay / dog = ogday
+
 
       // Remember: console.log is your friend :)
 
@@ -41,7 +95,7 @@ class App extends Component{
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return currentWord
     })
-
+  
 
     // joining the array back to a string of translated words
     // no need to change this variable
