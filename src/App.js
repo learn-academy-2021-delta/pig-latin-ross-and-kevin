@@ -31,36 +31,34 @@ class App extends Component{
       let vowelsArray = currentWord.split("").filter(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
-    
+
       console.log("vowelsArray:", vowelsArray)
+
+      let vowelIndex = 0
+
+    if(!vowelsArray[0]){
+     return currentWord + "way"
+    } else if (vowelsArray[0]){
+        return currentWord.slice(vowelIndex) + currentWord.slice(0, vowelIndex) + "ay";
+    }
+    //looks for a word with no vowels in the array, will return that word plus "way" added to the end
+
 
       // your code here!
       // define what a vowel is
 
-      // var i=0
-      // var j=0
-
-      // var firstVow = (currentWord) => {
-      //   let vowels = 'aeiouAEIOU'
-      //   for (i=0; i<currentWord.length; i++) {
-      //     for (j=0; j<vowels.length; j++) {
-      //       if(currentWord[i]===vowels[j]){
-      //         return currentWord.indexOf(currentWord[i]);
-      //       }
-      //     }
-      //   }
-      // };
-
       // console.log(firstVow("index of first vowel;", currentWord))
       let vowels = ["a", "e", "i", "o", "u", "y"] 
 
-      let vowelsIndex = 0
+      
+      
+      // if (vowels.includes(currentWord[0])) {
+      //   return currentWord + "way"
 
-      if (vowels.includes(currentWord[0])) {
-        return currentWord + "way"
-      } else if (!vowels.includes(currentWord[0])) {
-        return currentWord + "way"
-      }
+      
+      // } else {
+      //   return currentWord.shift + "way"
+      // }
       // console.log(vowelsIndex("bobby"))
 
       //const pigLatin = (userInput) => {
