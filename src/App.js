@@ -34,21 +34,60 @@ class App extends Component{
 
       console.log("vowelsArray:", vowelsArray)
 
-      let vowelIndex = 0
-
-    if(!vowelsArray[0]){
-     return currentWord + "way"
-    } else if (vowelsArray[0]){
-        return currentWord.slice(vowelIndex) + currentWord.slice(0, vowelIndex) + "ay";
-    }
-    //looks for a word with no vowels in the array, will return that word plus "way" added to the end
-
-
       // your code here!
-      // define what a vowel is
 
-      // console.log(firstVow("index of first vowel;", currentWord))
-      let vowels = ["a", "e", "i", "o", "u", "y"] 
+      //function created to look for "q" within currentWord
+      let lookForQ = currentWord.split("").filter(q => { 
+        return q === "q" 
+      })
+      // console.log("q", lookForQ)
+
+      //function created to look for "y" within currentWord
+      let lookForY = currentWord.split("").filter(y => { 
+        return y === "y" 
+      })
+      console.log("y", lookForY)
+
+      //declared a variable to call on the first vowel "string" in the vowelsArra
+      let vowelsIndex = vowelsArray[0]
+
+      //to verifty the correct vowel is being called
+      console.log("vowelsIndex", vowelsIndex)  
+   
+      //declare a variable to identify the first characther in the currentWord "string" array to call upon within conditionals
+      let firstChar = currentWord.charAt (0);  
+      
+
+      //looks for no vowels OR vowel at first character value OR "y" is last character, keep currentWord in tack and add "way"
+      if (!vowelsArray[0] || vowelsArray.indexOf(firstChar) >= 0 || lookForY === currentWord.length -1){
+        return currentWord + "way"
+        //looks for "q" in the currentWord and "u". if both "qu" exist together then splice firstWord pass "u"
+        } else if (lookForQ + vowelsArray[0] === "qu") {
+          vowelsIndex = currentWord.indexOf(vowelsIndex);
+          let firstWord = currentWord.slice(vowelsIndex + 1);
+          console.log("firstWord", firstWord)
+          let secondWord = currentWord.slice(0, vowelsIndex + 1);
+          console.log("secondWord", secondWord)
+          return firstWord + secondWord + "ay"
+
+        } else if (currentWord.charAt(1) === "y") {
+          //vowelsIndex = currentWord.indexOf(vowelsIndex);
+          let firstWord = currentWord.slice(1);
+          console.log("firstWord", firstWord)
+          let secondWord = currentWord.slice(0, 1);
+          console.log("secondWord", secondWord)
+          return firstWord + secondWord + "ay"
+
+          } else if (vowelsArray[0] || lookForY[0]) {
+            console.log("Index of Y",lookForY.indexOf("y"))
+            vowelsIndex = currentWord.indexOf(vowelsIndex);
+            let firstWord = currentWord.slice(vowelsIndex);
+            console.log("firstWord", firstWord)
+            let secondWord = currentWord.slice(0, vowelsIndex);
+            console.log("secondWord", secondWord)
+            return firstWord + secondWord + "ay"
+  }
+
 
       
       
